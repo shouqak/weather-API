@@ -30,9 +30,9 @@
               }
             ],
             "url": {
-              "raw": "http://127.0.0.1:3000/auth/signup",
+              "raw": "{{base_url}}/auth/signup",
               "host": [
-                "http://127.0.0.1:3000"
+                "{{base_url}}"
               ],
               "path": [
                 "auth",
@@ -71,9 +71,9 @@
               }
             ],
             "url": {
-              "raw": "http://127.0.0.1:3000/auth/signin",
+              "raw": "{{base_url}}/auth/signin",
               "host": [
-                "http://127.0.0.1:3000"
+                "{{base_url}}"
               ],
               "path": [
                 "auth",
@@ -116,9 +116,9 @@
               }
             ],
             "url": {
-              "raw": "http://127.0.0.1:3000/auth/signout",
+              "raw": "{{base_url}}/auth/signout",
               "host": [
-                "http://127.0.0.1:3000"
+                "{{base_url}}"
               ],
               "path": [
                 "auth",
@@ -156,9 +156,9 @@
               }
             ],
             "url": {
-              "raw": "http://127.0.0.1:3000/weather?lat=24.71&lon=46.68",
+              "raw": "{{base_url}}/weather?lat=24.71&lon=46.68",
               "host": [
-                "http://127.0.0.1:3000"
+                "{{base_url}}"
               ],
               "path": [
                 "weather"
@@ -208,9 +208,9 @@
               }
             ],
             "url": {
-              "raw": "http://127.0.0.1:3000/history?limit=10&skip=0&sort=-requestedAt",
+              "raw": "{{base_url}}/history?limit=10&skip=0&sort=-requestedAt",
               "host": [
-                "http://127.0.0.1:3000"
+                "{{base_url}}"
               ],
               "path": [
                 "history"
@@ -259,9 +259,9 @@
               }
             ],
             "url": {
-              "raw": "http://127.0.0.1:3000/history?count=true",
+              "raw": "{{base_url}}/history?count=true",
               "host": [
-                "http://127.0.0.1:3000"
+                "{{base_url}}"
               ],
               "path": [
                 "history"

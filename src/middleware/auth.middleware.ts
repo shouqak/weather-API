@@ -3,8 +3,9 @@ import jwt from 'jsonwebtoken';
 import { jwtConfig } from '../config/jwt';
 
 
-interface AuthRequest extends Request {
-  user?: { userId: string; role: string };
+
+export interface AuthRequest extends Request {
+  user?:any
 }
 
 export const authorized = (
@@ -14,7 +15,7 @@ export const authorized = (
 ): void => {
   const authHeader = req.headers.authorization;
 
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+  if (!authHeader || !authHeader.startsWith('Bearer')) {
     res.status(401).json({ error: ' No token provided' });
     return;
   }

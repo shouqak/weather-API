@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import Weather from '../models/weather.model';
 import History from '../models/history.model';
 import axios from 'axios';
-
+import {AuthRequest} from "../middleware/auth.middleware"
 const WEATHER_API_KEY = "0954c35d618ad551c2e9a5a4b1177d67";
 
 const weatherApi = async (lat: number, lon: number) => {
@@ -11,7 +11,7 @@ const weatherApi = async (lat: number, lon: number) => {
   return response.data;
 };
 
-export const getWeather = async (req: Request, res: Response): Promise<void> => {
+export const getWeather = async (req: AuthRequest, res: Response): Promise<void> => {
   try {
 
     const userId = (req as any).user.userId;

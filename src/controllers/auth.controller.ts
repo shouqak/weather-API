@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import User, { UsersCollection } from '../models/user.model';
 import { jwtConfig } from '../config/jwt'; 
+import { OK } from '../utils/http-status';
 
 const generateToken = (id: string, role: string): string => {
   return jwt.sign(
@@ -106,9 +107,18 @@ export const signin = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export const signout = async (_req: Request, res: Response): Promise<void> => {
-  res.status(200).json({
+export const signout = async (req: Request, res: Response) => {
+  res.cookie('accessToken', 'none', {
+    expires: new Date(Date.now() + 5 * 1000),
+    httpOnly: true,
+  });
+  res.cookie('refreshToken', 'none', {
+    expires: new Date(Date.now() + 5 * 1000),
+    httpOnly: true,
+  });
+
+  res.status(OK).json({
     status: 'success',
-    message: 'sign out successfully'
+    message: 'Signed out successfully',
   });
 };
